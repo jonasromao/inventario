@@ -1,5 +1,6 @@
 package com.hc.inventario.business;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,11 @@ public class UsuarioBusiness {
 
 	@Autowired
 	private UsuarioDAO usuarioDAO;
+	
+	public List<Usuario> findAll(String nome, String login) {
+		
+		return usuarioDAO.findByNomeAndLogin(nome, login);
+	}
 
 	public Usuario merge(Usuario usuario) throws BusinessException {
 
