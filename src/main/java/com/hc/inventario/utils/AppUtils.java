@@ -9,7 +9,7 @@ public class AppUtils {
 	}
 
 	public static boolean isNotNullOrEmpty( Object objeto ) {
-		return !isNotNullOrEmpty(objeto);
+		return !isNullOrEmpty(objeto);
 	}
 	
 }
