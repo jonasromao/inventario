@@ -1,0 +1,23 @@
+<div class="flat-page">
+  <div class="p-grid p-justify-center">
+    <div class="p-md-3">
+      <img src="assets/img/logo.png" width="150px" class="user-avatar" />
+      <h1>Projeto Base</h1>
+      <form role="form" class="ui-fluid">
+        <div class="form-content">
+          <div class="form-group ui-float-label">
+            <input type="text" id="email" name="email" [(ngModel)]="loginTO.email" class="input-underline input-lg" pInputText>
+            <label for="email">E-mail</label>
+          </div>
+
+          <div class="form-group ui-float-label">
+            <input type="password" id="senha" name="senha" [(ngModel)]="loginTO.senha" class="input-underline input-lg" pInputText>
+            <label for="senha">Senha</label>
+          </div>
+        </div>
+        <button class="btn rounded-btn" (click)="login()">Entrar</button>
+        <button class="btn rounded-btn" (click)="registrar()">Registrar</button>
+      </form>
+    </div>
+  </div>
+</div>

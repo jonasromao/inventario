@@ -1,0 +1,13 @@
+<div class="topbar-item" [class.show-children]="item.items && showChildren">
+  <div class="topbar-item-info" (click)="handleClick(item)">
+    <span [ngClass]="'topbar-item-icon ' + (item.icon || '')"></span>
+    <span class="topbar-item-label">{{ item.label }}</span>
+    <span class="topbar-item-icon pi pi-caret-down" *ngIf="item.items"></span>
+  </div>
+  
+  <div class="topbar-item-children" [smoothToggle]="showChildren">
+    <ng-container *ngFor="let childItem of item.items">
+      <app-topbar-item [item]="childItem"></app-topbar-item>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+@import "../layout-variables";
+
+.topbar {
+  background-color: $topbar-background-color;
+  height: $header-height;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  left: 0;
+  line-height: 30px;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-brand {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  color: $topbar-font-color;
+
+  &:focus,
+  &:active,
+  &:visited,
+  &:hover {
+    color: $topbar-font-color-on-hover;
+  }
+}
+
+.topbar-left {
+  flex-grow: 1;
+}
+
+.topbar-right {
+  
+}
+
+.topbar, .topbar-right, .topbar-left {
+  color: $topbar-font-color;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-toggler {
+  color: $topbar-toggler-color;
+  font-size: 1.3em;
+  margin-right: 10px;
+  margin-top: 6px;
+  display: none;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .topbar-right {
+    display: none;
+  }
+  .topbar-toggler {
+    display: block;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../layout-variables";
+
+.topbar-item {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: $topbar-font-color-on-hover;
+  }
+
+  &.show-children {
+    color: $topbar-font-color-on-hover;
+    
+    .topbar-item-children {
+      box-shadow: 0 0 0.2em #ccc;
+    }
+  }
+
+  .topbar-item-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar-item-label {
+
+  }
+
+  .topbar-item-icon {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
+
+.topbar-item-children {
+  position: absolute;
+  top: 35px;  
+  right: 0;
+  background-color: #fff;
+  color: #222;
+  border-radius: 5px;
+
+  ::ng-deep .topbar-item {
+    margin: 5px 0;
+    padding: 0 10px;
+
+    &:hover {
+      color: #222;
+      background-color: #eee;
+    }
+  }
+}

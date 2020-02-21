@@ -1,0 +1,74 @@
+@import "../layout-variables";
+
+.sidebar {
+  position: fixed;
+  z-index: 1000;
+  top: $header-height;
+  left: $sidebar-width;
+  width: $sidebar-width;
+  margin-left: -$sidebar-width;
+  margin-bottom: 48px;
+  border: none;
+  border-radius: 0;
+  overflow-y: auto;
+  background-color: $topbar-background-color;
+  bottom: 0;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+
+  &.collapsed {
+    width: $sidebar-width-collapsed;
+    ::ng-deep {
+      .sidebar-item-label, .sidebar-item-arrow {
+        display: none;
+      }
+      .sidebar-item-icon {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+.collapse-sidebar-btn {
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: $sidebar-width;
+  cursor: pointer;
+  padding: 12px;
+  bottom: 0;
+  color: #999;
+  background: #212529;
+  border-top: 1px solid #4c4c4c;
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    background: darken($topbar-background-color, 5%);
+    color: #fff;
+  }
+
+  &.collapsed {
+    width: $sidebar-width-collapsed;
+
+    .collapse-sidebar-btn-label {
+      display: none;
+    }
+  }
+
+  .collapse-sidebar-btn-icon {
+    font-size: 23px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .sidebar {
+    left: 0px;
+  }
+}
+@media print {
+  .sidebar {
+    display: none !important;
+  }
+}

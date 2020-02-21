@@ -1,0 +1,15 @@
+:host ::ng-deep {
+  .ui-panel-titlebar {
+    display: flex;
+    align-items: center;
+  }
+  .ui-panel-title {
+    flex-grow: 1;
+  }
+}
+
+.panel-header-buttons {
+  button {
+    margin-left: 16px;
+  }
+}

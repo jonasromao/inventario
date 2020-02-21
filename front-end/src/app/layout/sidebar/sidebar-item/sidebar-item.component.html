@@ -1,0 +1,26 @@
+<div *ngIf="item.items; then showParentItem; else showItem"></div>
+
+<ng-template #showItem>
+  <div class="sidebar-item">
+    <a class="sidebar-item-link" [routerLink]="item.routerLink ? ['/', item.routerLink] : '/'">
+      <span [class]="'sidebar-item-icon ' + item.icon"></span>
+      <span class="sidebar-item-label">{{ item.label }}</span>
+    </a>
+  </div>
+</ng-template>
+
+<ng-template #showParentItem>
+  <div class="sidebar-item sidebar-parent-item" [class.expanded]="item.expanded" (click)="item.expanded = !item.expanded">
+    <a class="sidebar-item-link">
+      <span [class]="'sidebar-item-icon ' + (item.icon || '')"></span>
+      <span class="sidebar-item-label">{{ item.label }}</span>
+      <span class="sidebar-item-arrow pi pi-chevron-down" [class.expanded]="item.expanded"></span>
+    </a>
+  </div>
+  <div class="sidebar-children-items-container" [smoothToggle]="item.expanded">
+    <div class="sidebar-indent"></div>
+    <div class="sidebar-children-items">
+      <app-sidebar-item *ngFor="let item of item.items" [item]="item"></app-sidebar-item>
+    </div> 
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<nav class="topbar">
+  <div class="topbar-left">
+    <a class="topbar-brand" routerLink="/home">
+      {{ appName }}
+    </a>
+  </div>
+  
+  <div class="topbar-right">
+    <input type="text" placeholder="Pesquisar" pInputText>
+    <app-topbar-item [item]="userItem"></app-topbar-item>
+  </div>
+
+  <div class="topbar-toggler" (click)="toggleSidebar()">
+    <span class="pi pi-bars"></span>
+  </div>
+</nav>

@@ -1,0 +1,9 @@
+<nav class="sidebar" [ngClass]="{collapsed: collapsed}">
+  <div class="sidebar-items">
+    <app-sidebar-item *ngFor="let item of appMenu" [item]="item"></app-sidebar-item>
+  </div>
+  <div class="collapse-sidebar-btn text-overflow-ellipsis" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+    <i class="collapse-sidebar-btn-icon pi pi-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+    <span class="collapse-sidebar-btn-label">Collapse Sidebar</span>
+  </div>
+</nav>

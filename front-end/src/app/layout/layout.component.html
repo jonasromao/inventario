@@ -1,0 +1,5 @@
+<app-topbar></app-topbar>
+<app-sidebar (collapse)="isSidebarCollapsed = $event"></app-sidebar>
+<section class="main-container" [class.collapsed]="isSidebarCollapsed">
+  <router-outlet></router-outlet>
+</section>

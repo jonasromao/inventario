@@ -1,0 +1,34 @@
+<p-table lazy="true" [value]="value" [totalRecords]="totalRecords" [rows]="rows" [paginator]="true" [loading]="loading">
+  <ng-template pTemplate="header">
+    <tr>
+      <!-- <th style="width: 3em">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th> -->
+      <th *ngFor="let col of columns">
+        {{col.header}}
+      </th>
+      <th *ngIf="hasActions">
+        Actions
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData>
+    <tr [pSelectableRow]="rowData">
+      <!-- <td>
+        <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+      </td> -->
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
+      <td class="action-icon-container" *ngIf="hasActions">
+        <ng-container *ngFor="let action of actions">
+          <span
+            class="action-icon" [ngClass]="action.icon"
+            (click)="action.handler && action.handler(rowData)"
+            [pTooltip]="action.title" tooltipPosition="left"
+          ></span>
+        </ng-container>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

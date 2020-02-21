@@ -1,0 +1,46 @@
+@import "../../layout-variables";
+
+.sidebar-item {
+  color: $sidebar-item-color;
+  background-color: $sidebar-item-background-color;
+  cursor: pointer;
+
+  &:hover, &:hover .sidebar-item-link, &.expanded, &.expanded .sidebar-item-link {
+    color: $sidebar-item-color-on-hover;
+    background-color: $sidebar-item-background-color-on-hover;
+  }
+  
+  .sidebar-item-link {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: $sidebar-item-color;
+  }
+  .sidebar-item-icon {
+    margin-right: 5px;
+  }
+  .sidebar-item-label {
+    flex-grow: 1;
+  }
+  .sidebar-item-arrow {
+    margin-right: 5px;
+    transition: all 0.3s ease-in-out;
+    
+    &.expanded {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.sidebar-children-items-container {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.sidebar-children-items {
+  flex-grow: 1;
+}
+
+.sidebar-indent {
+  width: 30px;
+}

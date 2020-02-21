@@ -1,0 +1,81 @@
+.flat-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: #222;
+  text-align: center;
+  color: #fff;
+  padding: 3em;
+
+  .user-avatar {
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  h1 {
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 36px;
+  }
+
+  .form-content {
+    padding: 40px 0;
+  }
+
+  .form-group {
+    margin: 28px 0;
+  }
+
+  .ui-float-label > input ~ label {
+    font-size: 22px;
+  }
+  .ui-float-label > input:focus ~ label,
+  .ui-float-label > input.ui-state-filled ~ label {
+    font-size: 16px;
+  }
+
+  .input-lg {
+    height: 46px;
+    padding: 10px 16px;
+    line-height: 1.3333333;
+    border-radius: 0;
+    font-size: 20px;
+  }
+  .input-underline {
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    border-radius: 0;
+  }
+  .input-underline:focus {
+    border-bottom: 2px solid #fff;
+    box-shadow: none;
+  }
+  .btn {
+    cursor: pointer;
+    margin: 0 8px;
+  }
+  .rounded-btn {
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    background: #222;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0 25px;
+  }
+  .rounded-btn:hover,
+  .rounded-btn:focus,
+  .rounded-btn:active,
+  .rounded-btn:visited {
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, 1);
+    outline: none;
+  }
+}
