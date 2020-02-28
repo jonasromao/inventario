@@ -22,6 +22,9 @@ export class UsuarioPageComponent {
     { title: 'Remove', icon: 'pi pi-trash', handler: p => this.removePerson(p) },
   ];
 
+  visualizar: boolean;
+  usuario: UsuarioTO;
+
   getObservable: Observable<PagedResult<UsuarioTO>>;
 
   constructor(
@@ -30,6 +33,7 @@ export class UsuarioPageComponent {
 
   ngOnInit() {
     this.getObservable = this.usuarioService.get();
+    this.visualizar = true;
   }
 
   editPerson(p: PersonTO) {
@@ -38,5 +42,10 @@ export class UsuarioPageComponent {
 
   removePerson(p: PersonTO) {
     alert('remove ' + p.name);
+  }
+
+  novoUsuario() {
+    this.visualizar = false;
+    this.usuario = new UsuarioTO();
   }
 }

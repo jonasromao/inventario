@@ -9,6 +9,7 @@ export const AppMenu: MenuItem[] = [
   {
     label: 'Usuários',
     icon: 'pi pi-user',
+    routerLink: 'usuarios',
   },
   {
     label: 'Perfis',

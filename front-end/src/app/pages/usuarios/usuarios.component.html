@@ -1,13 +1,48 @@
-<p-panel header="Manage Employees">
-  <p-header>
+<p-panel header="Gerenciar Usuários">
+  <p-header *ngIf="visualizar"> 
     <div class="panel-header-buttons">
       <button class="delete-button" label="Delete" icon="pi pi-minus-circle" pButton></button>
-      <button class="add-button" label="Novo usuário" icon="pi pi-plus-circle" pButton></button>
-    </div>
+      <button class="add-button" label="Novo usuário" icon="pi pi-plus-circle" pButton (click)="novoUsuario()"></button>
+    </div>  
   </p-header>
   
   <app-table
     [sourceObservable]="getPeopleObservable"
     [columns]="columns" [actions]="actions"
+    *ngIf="visualizar"
   ></app-table>
+
+  <div *ngIf="!visualizar">
+    <div class="p-grid" style="margin-top: 15px">
+      <div class="p-col-3">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" pInputText> 
+          <label for="float-input">Nome</label>
+        </span>
+      </div>
+
+      <div class="p-col-3">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" pInputText> 
+          <label for="float-input">CPF</label>
+        </span>
+      </div>
+
+      <div class="p-col-3">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" pInputText> 
+          <label for="float-input">Login</label>
+        </span>
+      </div>
+
+      <div class="p-col-3">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="30" pInputText> 
+          <label for="float-input">Senha</label>
+        </span>
+      </div>
+    </div>
+  </div>
+
+
 </p-panel>
