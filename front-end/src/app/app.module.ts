@@ -14,6 +14,7 @@ import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 import { ServicesModule } from './services/services.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ServicesModule } from './services/services.module';
     PagesModule,
     SharedModule.forRoot(),
     ServicesModule,
+    FormsModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy, },

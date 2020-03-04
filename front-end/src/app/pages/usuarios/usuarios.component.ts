@@ -34,6 +34,7 @@ export class UsuarioPageComponent {
   ngOnInit() {
     this.getObservable = this.usuarioService.get();
     this.visualizar = true;
+    this.usuario = new UsuarioTO();
   }
 
   editPerson(p: PersonTO) {
@@ -47,5 +48,9 @@ export class UsuarioPageComponent {
   novoUsuario() {
     this.visualizar = false;
     this.usuario = new UsuarioTO();
+  }
+
+  salvar() {
+    console.log(this.usuario);
   }
 }

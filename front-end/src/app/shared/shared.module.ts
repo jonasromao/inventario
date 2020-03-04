@@ -44,5 +44,6 @@ export class SharedModule {
         ...PrimeNgModule.forRoot().providers,
       ],
     }
+
   }
 }
